@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import LocationDetails from "./components/location-details";
-import PropTypes from "prop-types";
 import ForecastSummaries from "./components/forecast-summaries";
 import ForecastDetails from "./components/forecast-detail";
-import "./styles/app.css";
+import getForecasts from "./requests/gerForecasts";
+import SearchForm from "./components/search-form";
 
-const App = (props) => {
-  const [selectedDate, setSelectedDate] = useState(props.forecasts[0].date);
-  const selectedForecast = props.forecasts.find(
+const App = () => {
+  const [selectedDate, setSelectedDate] = useState(0);
+  const [forecasts, setForecasts] = useState([]);
+  const [location, setLocation] = useState({
+    city: "",
+    country: "",
+  });
+  const [query, setQuery] = useState("");
+  const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
   console.log(selectedForecast);
@@ -16,28 +22,23 @@ const App = (props) => {
     setSelectedDate(date);
   };
 
+  useEffect(() => {
+    getForecasts(setSelectedDate, setForecasts, setLocation);
+  }, []);
+
   return (
     <div className="forecast">
-      <LocationDetails
-        city={props.location.city}
-        country={props.location.country}
-      />
+      <LocationDetails city={location.city} country={location.country} />
+
+      <SearchForm />
 
       <ForecastSummaries
-        forecasts={props.forecasts}
+        forecasts={forecasts}
         handleForecastSelect={handleForecastSelect}
       />
       {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
     </div>
   );
-};
-
-App.propTypes = {
-  location: PropTypes.shape({
-    city: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
-  forecasts: PropTypes.array.isRequired,
 };
 
 export default App;
