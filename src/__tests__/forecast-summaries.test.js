@@ -7,7 +7,7 @@ describe("ForecastSummaries", () => {
     {
       date: 123,
       description: "date1",
-      icon: "icon1",
+      icon: "200",
       temperature: {
         max: 999,
       },
@@ -15,7 +15,7 @@ describe("ForecastSummaries", () => {
     {
       date: 456,
       description: "date2",
-      icon: "icon2",
+      icon: "800",
       temperature: {
         max: 777,
       },
@@ -23,14 +23,22 @@ describe("ForecastSummaries", () => {
   ];
 
   it("renders the correct amount of ForecastSummary components", () => {
-    const { asFragment } = render(<ForecastSummaries forecasts={forecasts} />);
+    const { asFragment } = render(
+      <ForecastSummaries
+        forecasts={forecasts}
+        handleForecastSelect={() => {}}
+      />
+    );
 
     expect(asFragment).toMatchSnapshot();
   });
 
   it("renders the correct amount of ForecastSummary component props", () => {
     const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={forecasts} />
+      <ForecastSummaries
+        forecasts={forecasts}
+        handleForecastSelect={() => {}}
+      />
     );
 
     expect(getAllByTestId("date-id")).toHaveLength(2);

@@ -4,7 +4,6 @@ import LocationDetails from "./components/location-details";
 import PropTypes from "prop-types";
 import ForecastSummaries from "./components/forecast-summaries";
 import ForecastDetails from "./components/forecast-detail";
-
 import "./styles/app.css";
 
 const App = (props) => {

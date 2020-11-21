@@ -5,7 +5,7 @@ import WeatherIcon from "react-icons-weather";
 
 const ForecastSummary = (props) => {
   const { date, temperature, description, icon, handleForecastSelect } = props;
-
+  console.log(date, icon);
   return (
     <h2>
       <div className="forecast-summary_icon" data-testid="icon-id">
@@ -32,7 +32,7 @@ const ForecastSummary = (props) => {
 };
 
 ForecastSummary.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
   temperature: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,

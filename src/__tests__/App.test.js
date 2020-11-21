@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import App from "../App";
 
 const location = {
   location: {
@@ -80,8 +80,10 @@ const location = {
   ],
 };
 
-/* test("renders learn react link", () => {
-  render(<App location={location} />);
-  //expect(linkElement).toBeInTheDocument();
-}); */
-//write snapshot test
+describe("App", () => {
+  const { asFragment } = render(<App />);
+
+  it("renders correctly", () => {
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
