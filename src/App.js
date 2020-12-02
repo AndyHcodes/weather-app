@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./styles/app.css";
 import LocationDetails from "./components/location-details";
 import ForecastSummaries from "./components/forecast-summaries";
 import ForecastDetails from "./components/forecast-detail";
-import getForecasts from "./requests/gerForecasts";
 import SearchForm from "./components/search-form";
+import axios from "axios";
 
 const App = () => {
   const [selectedDate, setSelectedDate] = useState(0);
@@ -23,14 +23,23 @@ const App = () => {
   };
 
   useEffect(() => {
-    getForecasts(setSelectedDate, setForecasts, setLocation);
+    locationSearch(setForecasts, setLocation);
   }, []);
+
+  const locationSearch = (location) => {
+    axios
+      .get(`https://weather-app-alt.herokuapp.com/forecast?city=${location}`)
+      .then((response) => {
+        setForecasts(response.data.forecasts);
+        setLocation(response.data.location);
+      });
+  };
 
   return (
     <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
 
-      <SearchForm />
+      <SearchForm locationSearch={locationSearch} />
 
       <ForecastSummaries
         forecasts={forecasts}
