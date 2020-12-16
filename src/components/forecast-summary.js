@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import WeatherIcon from "react-icons-weather";
+import "../styles/forecast-summary.css";
 
 const ForecastSummary = (props) => {
   const { date, temperature, description, icon, handleForecastSelect } = props;
   return (
-    <h2>
+    <h2 className="fcstSumm">
       <div className="forecast-summary_icon" data-testid="icon-id">
         <WeatherIcon name="owm" iconId={icon} />
       </div>
@@ -32,7 +33,7 @@ const ForecastSummary = (props) => {
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
-  temperature: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
 };

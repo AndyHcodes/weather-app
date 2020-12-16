@@ -5,7 +5,7 @@ import Moment from "moment";
 const ForecastDetails = ({ forecast }) => {
   const { date, temperature, wind, humidity } = forecast;
   return (
-    <>
+    <div className="forecastSum">
       <div className="big-date">{Moment(date).format("ddd Do MMM")}</div>
 
       <div className="temp-max">Max Temp: {temperature.max}&deg;c</div>
@@ -17,7 +17,7 @@ const ForecastDetails = ({ forecast }) => {
       <div className="wind-speed">
         Wind: {wind.speed}mph {<i className={"wind-speed"} />}
       </div>
-    </>
+    </div>
   );
 };
 
