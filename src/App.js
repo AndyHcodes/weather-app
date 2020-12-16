@@ -10,7 +10,7 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(0);
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({
-    city: "",
+    city: "Manchester",
     country: "",
   });
 
@@ -23,7 +23,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    locationSearch(setForecasts, setLocation);
+    locationSearch(location.city);
   }, []);
 
   const locationSearch = (location) => {
