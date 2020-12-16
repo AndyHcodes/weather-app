@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Moment from "moment";
-import WeatherIcon from "react-icons-weather";
 
 const ForecastDetails = ({ forecast }) => {
   const { date, temperature, wind, humidity } = forecast;

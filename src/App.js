@@ -13,7 +13,7 @@ const App = () => {
     city: "",
     country: "",
   });
-  const [query, setQuery] = useState("");
+
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );

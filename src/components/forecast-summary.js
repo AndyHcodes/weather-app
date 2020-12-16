@@ -5,7 +5,6 @@ import WeatherIcon from "react-icons-weather";
 
 const ForecastSummary = (props) => {
   const { date, temperature, description, icon, handleForecastSelect } = props;
-  console.log(date, icon);
   return (
     <h2>
       <div className="forecast-summary_icon" data-testid="icon-id">
