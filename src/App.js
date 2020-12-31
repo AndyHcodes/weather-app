@@ -24,7 +24,7 @@ const App = () => {
 
   useEffect(() => {
     locationSearch(location.city);
-  }, []);
+  }, [location.city]);
 
   const locationSearch = (location) => {
     axios
