@@ -11,7 +11,7 @@ const App = () => {
   const [forecasts, setForecasts] = useState([]);
   const [location, setLocation] = useState({
     city: "Manchester",
-    country: "",
+    country: "England",
   });
 
   const selectedForecast = forecasts.find(
@@ -28,7 +28,7 @@ const App = () => {
 
   const locationSearch = (location) => {
     axios
-      .get(`https://weather-app-alt.herokuapp.com/forecast?city=${location}`)
+      .get(`https://mcr-codes-weather.herokuapp.com/forecast?city=${location}`)
       .then((response) => {
         setForecasts(response.data.forecasts);
         setLocation(response.data.location);
