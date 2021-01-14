@@ -5,10 +5,10 @@
 
 @media (max-width: 415px) {
   .forecastSum {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
 .temp-max {
-  font-size: 60px;
+  font-size: 80px;
 }
