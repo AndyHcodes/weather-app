@@ -17,7 +17,7 @@ const App = () => {
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
-  console.log(selectedForecast);
+
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
   };
