@@ -9,9 +9,9 @@ const ForecastDetails = ({ forecast }) => {
     <div className="forecastSum">
       <div className="big-date">{Moment(date).format("ddd Do MMM")}</div>
 
-      <div className="temp-max">Max Temp: {temperature.max}&deg;c</div>
+      <div className="temp-max">Max: {temperature.max}&deg;c</div>
 
-      <div className="temp-min">Min Temp: {temperature.min}&deg;c</div>
+      <div className="temp-min">Min: {temperature.min}&deg;c</div>
 
       <div className="big-humidity">Humidity: {humidity}%</div>
 

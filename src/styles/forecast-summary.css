@@ -2,3 +2,7 @@
   text-align: center;
   display: flex;
 }
+
+.fcstSumm button {
+  border-radius: 10%;
+}
