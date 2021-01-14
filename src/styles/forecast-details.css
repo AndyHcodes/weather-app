@@ -1,9 +1,14 @@
 .forecastSum {
   text-align: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 415px) {
   .forecastSum {
     font-size: 13px;
   }
+}
+
+.temp-max {
+  font-size: 60px;
 }
