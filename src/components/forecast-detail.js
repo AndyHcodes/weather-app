@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/forecast-details.css";
 import Moment from "moment";
 
 const ForecastDetails = ({ forecast }) => {

@@ -1,0 +1,9 @@
+.forecastSum {
+  text-align: center;
+}
+
+@media (max-width: 415px) {
+  .forecastSum {
+    font-size: 13px;
+  }
+}
