@@ -8,8 +8,6 @@ const SearchForm = ({ locationSearch }) => {
     setSearchText({ ...searchText, [event.target.name]: event.target.value });
   };
 
-  console.log(searchText);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     locationSearch(searchText.search);

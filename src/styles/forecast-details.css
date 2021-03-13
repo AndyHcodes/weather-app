@@ -1,9 +1,17 @@
+.location-details {
+  text-align: center;
+  font-size: 50px;
+}
+
 .forecastSum {
   text-align: center;
   margin-top: 20px;
 }
 
 @media (max-width: 415px) {
+  .location-details {
+    font-size: 30px;
+  }
   .forecastSum {
     font-size: 15px;
   }
