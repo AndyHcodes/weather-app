@@ -26,7 +26,7 @@ const ForecastSummary = (props) => {
       >
         <span>{description}</span>
       </div>
-      <button onClick={() => handleForecastSelect(date)}>More Details</button>
+      <button onClick={() => handleForecastSelect(date)}>More Info</button>
     </h2>
   );
 };
