@@ -17,8 +17,8 @@
 
 @media (max-width: 415px) {
   .forecast-summaries button {
-    font-size: 7px;
+    font-size: 8px;
     background-color: transparent;
-    color: rgb(19, 19, 104);
+    color: rgb(10, 10, 66);
   }
 }
